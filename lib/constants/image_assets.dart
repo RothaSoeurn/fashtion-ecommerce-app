@@ -1,6 +1,7 @@
 const assetIcon = "assets/icons";
 const assetImage = "assets/images/";
-
+//
+const errorImg = "$assetImage/no-img.png";
 //icons
 const homeSvg = "$assetIcon/home-filled-svgrepo-com.svg";
 const menuSvg = "$assetIcon/menu-svgrepo-com.svg";
