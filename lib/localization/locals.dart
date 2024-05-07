@@ -30,6 +30,9 @@ class Locals {
       'home': 'Home',
       'menu': "Menu",
       "profile": "Profile",
+      'women': 'Women',
+      'man': 'Man',
+      'kids': 'Kids',
     },
     'km': {
       'english': 'អង់គ្លេស',

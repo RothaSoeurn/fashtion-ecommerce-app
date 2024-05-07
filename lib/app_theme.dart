@@ -19,5 +19,15 @@ class AppThene {
         fontFamily: 'tenorSan',
       ),
     ),
+    expansionTileTheme: const ExpansionTileThemeData(
+      textColor: primayColor,
+      iconColor: primayColor,
+      collapsedShape: RoundedRectangleBorder(
+        side: BorderSide.none,
+      ),
+      shape: RoundedRectangleBorder(
+        side: BorderSide.none,
+      ),
+    ),
   );
 }
