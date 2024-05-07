@@ -13,3 +13,4 @@ const placeholderColor = Color(0xff888888);
 const lineColor = Color(0xffE0CFBA);
 const inputBackgroundColor = Color(0xffD9DBE9);
 const offWhiteColor = Color(0xffFCFCFC);
+const footerColor = Color(0xffC4C4C4);
