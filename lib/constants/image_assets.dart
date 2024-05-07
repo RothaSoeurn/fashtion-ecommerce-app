@@ -13,3 +13,4 @@ const searchSvg = "$assetIcon/search-svgrepo-com.svg";
 const igSvg = "$assetIcon/Instagram.svg";
 const twSvg = "$assetIcon/Twitter.svg";
 const ytSvg = "$assetIcon/YouTube.svg";
+const arrowRightSvg = "$assetIcon/arrow-r.svg";
