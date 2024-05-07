@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fashion_ecom_app/constants/colors.dart';
+import 'package:fashion_ecom_app/constants/image_assets.dart';
 import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/constants/style.dart';
 import 'package:fashion_ecom_app/presentation/widgets/image_network_widget.dart';
@@ -27,10 +28,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return ListView(
       children: [
         _buildSlideShow(),
+        Image.asset(deviderImg),
+        Image.asset(deviderImg),
         MasonryGridView.count(
           padding: EdgeInsets.all(scaleFontSize(appSpace)),
           shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: 4,
           crossAxisCount: 2,
           crossAxisSpacing: scaleFontSize(appSpace),
