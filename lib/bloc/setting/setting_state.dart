@@ -1,6 +1,5 @@
-part of 'setting_bloc.dart';
+class SettingState {
+  int currentPageIndex;
 
-@immutable
-sealed class SettingState {}
-
-final class SettingInitial extends SettingState {}
+  SettingState({this.currentPageIndex = 0});
+}

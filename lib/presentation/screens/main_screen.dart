@@ -1,4 +1,7 @@
 import 'package:fashion_ecom_app/bloc/setting/setting_bloc.dart';
+import 'package:fashion_ecom_app/bloc/setting/setting_event.dart';
+import 'package:fashion_ecom_app/bloc/setting/setting_state.dart';
+import 'package:fashion_ecom_app/constants/colors.dart';
 import 'package:fashion_ecom_app/constants/image_assets.dart';
 import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/helper/helper.dart';
@@ -18,7 +21,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final _pageController = PageController();
+  final _pageController = PageController(initialPage: 0);
   final List<Widget> pages = const [
     HomeScreen(),
     MenuScreen(),
@@ -37,11 +40,48 @@ class _MainScreenState extends State<MainScreen> {
             physics: const NeverScrollableScrollPhysics(),
             children: pages,
           ),
-          bottomNavigationBar: const _buildBottomNavigationBar(),
+          bottomNavigationBar: _buildFotter(state),
         );
       },
     );
     //adddd
+  }
+
+  BottomNavigationBar _buildFotter(SettingState state) {
+    return BottomNavigationBar(
+        selectedItemColor: primayColor,
+        currentIndex: state.currentPageIndex,
+        onTap: (value) {
+          context.read<SettingBloc>().add(SetCurrentPageIndex(index: value));
+          _pageController.animateToPage(
+            value,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+          );
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              homeSvg,
+              width: scaleFontSize(25),
+            ),
+            label: trans('home'),
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              menuSvg,
+              width: scaleFontSize(25),
+            ),
+            label: trans('menu'),
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              profileSvg,
+              width: scaleFontSize(25),
+            ),
+            label: trans('profile'),
+          ),
+        ]);
   }
 
   AppBar _buildAppbar() {
@@ -69,38 +109,5 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ],
     );
-  }
-}
-
-class _buildBottomNavigationBar extends StatelessWidget {
-  const _buildBottomNavigationBar({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(items: [
-      BottomNavigationBarItem(
-        icon: SvgPicture.asset(
-          homeSvg,
-          width: scaleFontSize(25),
-        ),
-        label: trans('home'),
-      ),
-      BottomNavigationBarItem(
-        icon: SvgPicture.asset(
-          menuSvg,
-          width: scaleFontSize(25),
-        ),
-        label: trans('menu'),
-      ),
-      BottomNavigationBarItem(
-        icon: SvgPicture.asset(
-          profileSvg,
-          width: scaleFontSize(25),
-        ),
-        label: trans('profile'),
-      ),
-    ]);
   }
 }

@@ -1,4 +1,6 @@
-part of 'setting_bloc.dart';
+abstract class SettingEvent {}
 
-@immutable
-sealed class SettingEvent {}
+class SetCurrentPageIndex extends SettingEvent {
+  int index;
+  SetCurrentPageIndex({required this.index});
+}
