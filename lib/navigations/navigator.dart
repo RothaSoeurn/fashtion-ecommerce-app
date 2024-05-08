@@ -1,3 +1,4 @@
+import 'package:fashion_ecom_app/presentation/screens/item_filter/item_filter_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -32,15 +33,15 @@ class AppNavigator {
         // return MaterialPageRoute(builder: (_) => const LoginScreen());
         return MaterialPageRoute(builder: (_) => const MainScreen());
 
-      // case ForgetPasswordScreen.routeName:
-      //   return PageRouteBuilder(
-      //     pageBuilder: (context, animation, secondaryAnimation) {
-      //       return const ForgetPasswordScreen();
-      //     },
-      //     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      //       return _st(animation, child);
-      //     },
-      //   );
+      case ItemFilterScreen.routeName:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) {
+            return const ItemFilterScreen();
+          },
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return _st(animation, child);
+          },
+        );
 
       default:
         return MaterialPageRoute(builder: (_) => const MainScreen());

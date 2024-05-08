@@ -4,7 +4,9 @@ import 'package:fashion_ecom_app/constants/image_assets.dart';
 import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/constants/style.dart';
 import 'package:fashion_ecom_app/helper/helper.dart';
+import 'package:fashion_ecom_app/presentation/screens/item_filter/item_filter_screen.dart';
 import 'package:fashion_ecom_app/presentation/widgets/image_network_widget.dart';
+import 'package:fashion_ecom_app/presentation/widgets/product_builder_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
@@ -54,55 +56,23 @@ class _HomeScreenState extends State<HomeScreen> {
             itemCount: brands.length,
             crossAxisCount: 3,
             itemBuilder: (context, index) {
-              return ImageNetWorkWidget(
-                isNotRounding: true,
-                fit: BoxFit.contain,
-                width: double.infinity,
-                height: scaleFontSize(100),
-                imageUrl: brands[index],
+              return GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, ItemFilterScreen.routeName);
+                },
+                child: ImageNetWorkWidget(
+                  isNotRounding: true,
+                  fit: BoxFit.contain,
+                  width: double.infinity,
+                  height: scaleFontSize(100),
+                  imageUrl: brands[index],
+                ),
               );
             },
           ),
         ),
         Image.asset(deviderImg),
-        MasonryGridView.count(
-          padding: EdgeInsets.all(scaleFontSize(appSpace)),
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: 4,
-          crossAxisCount: 2,
-          crossAxisSpacing: scaleFontSize(appSpace),
-          mainAxisSpacing: scaleFontSize(appSpace),
-          itemBuilder: (context, index) {
-            return Column(
-              children: [
-                ImageNetWorkWidget(
-                  fit: BoxFit.cover,
-                  imageUrl:
-                      'https://img.freepik.com/free-photo/black-woman-trendy-grey-leather-jacket-posing-beige-background-studio-winter-autumn-fashion-look_273443-141.jpg',
-                  width: double.infinity,
-                  height: scaleFontSize(200),
-                  isNotRounding: true,
-                ),
-                SizedBox(height: scaleFontSize(5)),
-                Text(
-                  '21WN reversible angora cardigan',
-                  style: TextStyle(
-                    fontSize: scaleFontSize(16),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  '\$120',
-                  style: TextStyle(
-                      fontSize: scaleFontSize(24),
-                      color: Theme.of(context).primaryColor),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            );
-          },
-        ),
+        ProductBuilder(),
         SizedBox(height: scaleFontSize(appSpace)),
         Text(
           trans('Follow Us').toUpperCase(),

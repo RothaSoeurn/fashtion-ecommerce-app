@@ -9,6 +9,7 @@ import 'package:fashion_ecom_app/localization/trans.dart';
 import 'package:fashion_ecom_app/presentation/screens/home/home_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/menu/menu_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/profile/profile_screen.dart';
+import 'package:fashion_ecom_app/presentation/widgets/appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -34,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
     return BlocBuilder<SettingBloc, SettingState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: _buildAppbar(),
+          appBar: AppbarWidget(),
           body: PageView(
             controller: _pageController,
             physics: const NeverScrollableScrollPhysics(),
@@ -82,32 +83,5 @@ class _MainScreenState extends State<MainScreen> {
             label: trans('profile'),
           ),
         ]);
-  }
-
-  AppBar _buildAppbar() {
-    return AppBar(
-      centerTitle: true,
-      leading: IconButton(
-        onPressed: () {
-          //TODO
-        },
-        icon: SvgPicture.asset(notificationSvg),
-      ),
-      title: Text(trans('Fashtion')),
-      actions: [
-        IconButton(
-          onPressed: () {
-            //TODO
-          },
-          icon: SvgPicture.asset(searchSvg),
-        ),
-        IconButton(
-          onPressed: () {
-            //TODO
-          },
-          icon: SvgPicture.asset(cartSvg),
-        ),
-      ],
-    );
   }
 }

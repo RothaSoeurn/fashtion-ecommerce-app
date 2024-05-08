@@ -1,5 +1,5 @@
 const assetIcon = "assets/icons";
-const assetImage = "assets/images/";
+const assetImage = "assets/images";
 //
 const errorImg = "$assetImage/no-img.png";
 const deviderImg = "$assetImage/Devider.png";
@@ -14,3 +14,5 @@ const igSvg = "$assetIcon/Instagram.svg";
 const twSvg = "$assetIcon/Twitter.svg";
 const ytSvg = "$assetIcon/YouTube.svg";
 const arrowRightSvg = "$assetIcon/arrow-r.svg";
+const filterSvg = "$assetIcon/filter.svg";
+const gridSvg = "$assetIcon/grid.svg";
