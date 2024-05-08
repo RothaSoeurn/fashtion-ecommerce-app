@@ -52,6 +52,10 @@ class Locals {
       'save': 'Save',
       'update': 'Update',
       'delete': 'Delete',
+      'camera': 'Camera',
+      'albums': 'Albums',
+      'forgot_password': 'Forgot password',
+      'continue': 'Continue',
     },
     'km': {
       'english': 'អង់គ្លេស',

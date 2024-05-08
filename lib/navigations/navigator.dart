@@ -1,3 +1,4 @@
+import 'package:fashion_ecom_app/presentation/screens/auth/change_password_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/edit_profile/edit_profile_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/item_filter/item_filter_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/main_screen.dart';
@@ -48,6 +49,16 @@ class AppNavigator {
         return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) {
             return const EditProfileScreen();
+          },
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return _st(animation, child);
+          },
+        );
+
+      case ChangePasswordScreen.routeName:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) {
+            return const ChangePasswordScreen();
           },
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return _st(animation, child);

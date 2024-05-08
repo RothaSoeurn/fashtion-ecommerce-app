@@ -72,7 +72,39 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         )
                       ]),
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet(
+                        showDragHandle: true,
+                        context: context,
+                        builder: (context) {
+                          return Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              ListTile(
+                                onTap: () {
+                                  //TODO
+                                },
+                                leading: SvgPicture.asset(
+                                  cameraSvg,
+                                  width: scaleFontSize(25),
+                                ),
+                                title: Text(trans('camera')),
+                              ),
+                              ListTile(
+                                onTap: () {
+                                  //TODO
+                                },
+                                leading: SvgPicture.asset(
+                                  albumsSvg,
+                                  width: scaleFontSize(25),
+                                ),
+                                title: Text(trans('albums')),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
                     icon: SvgPicture.asset(editSvg),
                   ),
                 ),
