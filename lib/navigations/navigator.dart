@@ -1,3 +1,4 @@
+import 'package:fashion_ecom_app/presentation/screens/edit_profile/edit_profile_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/item_filter/item_filter_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/main_screen.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +44,15 @@ class AppNavigator {
           },
         );
 
+      case EditProfileScreen.routeName:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) {
+            return const EditProfileScreen();
+          },
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return _st(animation, child);
+          },
+        );
       default:
         return MaterialPageRoute(builder: (_) => const MainScreen());
       // return MaterialPageRoute(builder: (_) => const LoginScreen());

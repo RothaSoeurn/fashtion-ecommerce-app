@@ -16,3 +16,5 @@ const ytSvg = "$assetIcon/YouTube.svg";
 const arrowRightSvg = "$assetIcon/arrow-r.svg";
 const filterSvg = "$assetIcon/filter.svg";
 const gridSvg = "$assetIcon/grid.svg";
+const arrowBackSvg = "$assetIcon/arrow-back.svg";
+const editSvg = "$assetIcon/edit.svg";

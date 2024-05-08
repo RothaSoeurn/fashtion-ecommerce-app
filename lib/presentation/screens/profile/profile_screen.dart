@@ -2,6 +2,7 @@ import 'package:fashion_ecom_app/constants/image_assets.dart';
 import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/constants/style.dart';
 import 'package:fashion_ecom_app/helper/helper.dart';
+import 'package:fashion_ecom_app/presentation/screens/edit_profile/edit_profile_screen.dart';
 import 'package:fashion_ecom_app/presentation/widgets/circle_image_network_widget.dart';
 import 'package:fashion_ecom_app/presentation/widgets/title_selectioin_widget.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               ListTile(
                 onTap: () {
-                  //TODO
+                  Navigator.pushNamed(
+                    context,
+                    EditProfileScreen.routeName,
+                  );
                 },
                 title: Text(
                   trans('edit_profile'),

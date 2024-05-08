@@ -19,6 +19,16 @@ class AppThene {
         fontFamily: 'tenorSan',
       ),
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: const MaterialStatePropertyAll<Color>(secondaryColor),
+        shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+      ),
+    ),
     expansionTileTheme: const ExpansionTileThemeData(
       textColor: primayColor,
       iconColor: primayColor,
