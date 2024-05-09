@@ -2,6 +2,7 @@ import 'package:fashion_ecom_app/bloc/item_filter/item_filter_bloc.dart';
 import 'package:fashion_ecom_app/bloc/item_filter/item_filter_event.dart';
 import 'package:fashion_ecom_app/bloc/item_filter/item_filter_state.dart';
 import 'package:fashion_ecom_app/constants/colors.dart';
+import 'package:fashion_ecom_app/constants/constant.dart';
 import 'package:fashion_ecom_app/constants/image_assets.dart';
 import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/constants/style.dart';
@@ -23,6 +24,7 @@ class ItemFilterScreen extends StatefulWidget {
 
 class _ItemFilterScreenState extends State<ItemFilterScreen> {
   List<String> categories = ['Women', 'Man', 'Kids'];
+  List<String> listIcons = [gridSvg, filterSvg];
 
   @override
   Widget build(BuildContext context) {
@@ -49,30 +51,29 @@ class _ItemFilterScreenState extends State<ItemFilterScreen> {
                           ),
                         ),
                       ),
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: inputBackgroundColor,
-                          shape: BoxShape.circle,
-                        ),
-                        child: IconButton(
-                          onPressed: () {
-                            //
-                          },
-                          icon: SvgPicture.asset(gridSvg),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.all(scaleFontSize(appSpace)),
-                        decoration: const BoxDecoration(
-                          color: inputBackgroundColor,
-                          shape: BoxShape.circle,
-                        ),
-                        child: IconButton(
-                          onPressed: () {
-                            //
-                          },
-                          icon: SvgPicture.asset(filterSvg),
-                        ),
+                      Row(
+                        children: listIcons.asMap().entries.map((entry) {
+                          int index = entry.key;
+                          String icon = entry.value;
+
+                          return Container(
+                            margin: EdgeInsets.symmetric(
+                              horizontal: scaleFontSize(3),
+                            ),
+                            decoration: const BoxDecoration(
+                              color: inputBackgroundColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: IconButton(
+                              onPressed: () {
+                                context.read<ItemFilterBloc>().add(
+                                      SelectIconFilterProduct(index: index),
+                                    );
+                              },
+                              icon: SvgPicture.asset(icon),
+                            ),
+                          );
+                        }).toList(),
                       ),
                     ],
                   ),
@@ -123,8 +124,12 @@ class _ItemFilterScreenState extends State<ItemFilterScreen> {
                   ),
                 ),
               ),
-              const SliverToBoxAdapter(
-                child: ProductBuilder(),
+              SliverToBoxAdapter(
+                child: ProductBuilder(
+                  displayType: state.selectedIconIndex == 0
+                      ? DisplayType.vertical
+                      : DisplayType.horinzor,
+                ),
               ),
             ],
           );

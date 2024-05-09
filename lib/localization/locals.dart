@@ -66,6 +66,8 @@ class Locals {
       'you_want_logout': 'Do you want to logout account?',
       'ok': 'Ok',
       'cancel': 'Cancel',
+      'sizes': 'Sizes',
+      'colors': 'Colors',
     },
     'km': {
       'english': 'អង់គ្លេស',

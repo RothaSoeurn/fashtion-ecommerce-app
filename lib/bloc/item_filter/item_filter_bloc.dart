@@ -7,5 +7,9 @@ class ItemFilterBloc extends Bloc<ItemFilterEvent, ItemFilterState> {
     on<SetSelectedChipIndex>((event, emit) {
       emit(ItemFilterState(selectedChipIndex: event.index));
     });
+
+    on<SelectIconFilterProduct>((event, emit) {
+      emit(ItemFilterState(selectedIconIndex: event.index));
+    });
   }
 }
