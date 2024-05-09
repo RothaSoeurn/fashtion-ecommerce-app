@@ -19,7 +19,7 @@ class ProductBuilder extends StatelessWidget {
         padding: EdgeInsets.all(scaleFontSize(appSpace)),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: 4,
+        itemCount: 20,
         crossAxisCount: 2,
         crossAxisSpacing: scaleFontSize(appSpace),
         mainAxisSpacing: scaleFontSize(appSpace),

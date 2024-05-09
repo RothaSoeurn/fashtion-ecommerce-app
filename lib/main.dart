@@ -1,5 +1,6 @@
 import 'package:fashion_ecom_app/app_theme.dart';
 import 'package:fashion_ecom_app/bloc/cart/cart_bloc.dart';
+import 'package:fashion_ecom_app/bloc/item_filter/item_filter_bloc.dart';
 import 'package:fashion_ecom_app/bloc/setting/setting_bloc.dart';
 import 'package:fashion_ecom_app/bloc/setting/setting_state.dart';
 import 'package:fashion_ecom_app/constants/globle_key.dart';
@@ -27,6 +28,7 @@ class _FashtionAppState extends State<FashtionApp> {
       providers: [
         BlocProvider<SettingBloc>(create: (context) => SettingBloc()),
         BlocProvider<CartBloc>(create: (context) => CartBloc()),
+        BlocProvider<ItemFilterBloc>(create: (context) => ItemFilterBloc()),
       ],
       child: BlocBuilder<SettingBloc, SettingState>(
         builder: (context, state) {
