@@ -57,6 +57,12 @@ class Locals {
       'forgot_password': 'Forgot password',
       'continue': 'Continue',
       'plz_enter_phone': "Please enter your phone number for change password.",
+      'your_profile_delete':
+          'Your profile, photo , reviews, orders , wishlists ,will be permanently deleted. Ater the deletion in processed, everyting in your account(excluding your order) will be deleted forever and may not be recovered.',
+      'deactivating': 'Deactivating your account is temporary.',
+      'delete_my_account': 'Delete my account',
+      'khmer': 'Khmer',
+      'english': 'English',
     },
     'km': {
       'english': 'អង់គ្លេស',

@@ -4,6 +4,8 @@ const assetImage = "assets/images";
 const errorImg = "$assetImage/no-img.png";
 const deviderImg = "$assetImage/Devider.png";
 const forgetPassImg = "$assetImage/forget-password.png";
+const khmerImg = "$assetImage/khmer.png";
+const usaImg = "$assetImage/usa.png";
 //icons
 const homeSvg = "$assetIcon/home-filled-svgrepo-com.svg";
 const menuSvg = "$assetIcon/menu-svgrepo-com.svg";

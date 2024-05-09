@@ -2,9 +2,11 @@ import 'package:fashion_ecom_app/constants/image_assets.dart';
 import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/constants/style.dart';
 import 'package:fashion_ecom_app/helper/helper.dart';
+import 'package:fashion_ecom_app/presentation/screens/account_delete/account_delete_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/address_book/address_book_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/auth/change_password_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/edit_profile/edit_profile_screen.dart';
+import 'package:fashion_ecom_app/presentation/screens/language/language_screen.dart';
 import 'package:fashion_ecom_app/presentation/widgets/circle_image_network_widget.dart';
 import 'package:fashion_ecom_app/presentation/widgets/title_selectioin_widget.dart';
 import 'package:flutter/material.dart';
@@ -149,7 +151,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               ListTile(
                 onTap: () {
-                  //TODO
+                  Navigator.pushNamed(
+                    context,
+                    LanguageScreen.routeName,
+                  );
                 },
                 title: Text(
                   trans('language'),
@@ -165,7 +170,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               ListTile(
                 onTap: () {
-                  //TODO
+                  Navigator.pushNamed(
+                    context,
+                    AccountDeleteScreen.routeName,
+                  );
                 },
                 title: Text(
                   trans('account_deletion'),
