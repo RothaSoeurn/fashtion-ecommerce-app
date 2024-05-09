@@ -56,6 +56,7 @@ class Locals {
       'albums': 'Albums',
       'forgot_password': 'Forgot password',
       'continue': 'Continue',
+      'plz_enter_phone': "Please enter your phone number for change password.",
     },
     'km': {
       'english': 'អង់គ្លេស',

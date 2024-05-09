@@ -35,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
     return BlocBuilder<SettingBloc, SettingState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: AppbarWidget(),
+          appBar: const AppbarWidget(),
           body: PageView(
             controller: _pageController,
             physics: const NeverScrollableScrollPhysics(),

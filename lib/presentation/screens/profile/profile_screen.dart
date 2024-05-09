@@ -2,6 +2,7 @@ import 'package:fashion_ecom_app/constants/image_assets.dart';
 import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/constants/style.dart';
 import 'package:fashion_ecom_app/helper/helper.dart';
+import 'package:fashion_ecom_app/presentation/screens/address_book/address_book_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/auth/change_password_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/edit_profile/edit_profile_screen.dart';
 import 'package:fashion_ecom_app/presentation/widgets/circle_image_network_widget.dart';
@@ -81,7 +82,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               ListTile(
                 onTap: () {
-                  //TODO
+                  Navigator.pushNamed(
+                    context,
+                    AddressBookScreen.routeName,
+                  );
                 },
                 title: Text(
                   trans('address_book'),

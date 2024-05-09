@@ -4,6 +4,7 @@ import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/constants/style.dart';
 import 'package:fashion_ecom_app/helper/helper.dart';
 import 'package:fashion_ecom_app/presentation/widgets/appbar_widget.dart';
+import 'package:fashion_ecom_app/presentation/widgets/box_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -45,37 +46,21 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             fontSize: scaleFontSize(20),
           ),
         ),
-        SizedBox(
-          height: scaleFontSize(20),
-        ),
-        Container(
-          padding: EdgeInsets.all(scaleFontSize(20)),
-          margin: EdgeInsets.all(scaleFontSize(appSpace)),
-          decoration: const BoxDecoration(
-            borderRadius: appRadius,
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Color.fromRGBO(
-                    100, 100, 111, 0.2), // Set shadow color with RGBA
-                offset: Offset(0, 7), // Horizontal and vertical offset
-                blurRadius: 29, // Blurriness of the shadow
-                spreadRadius: 0, // Expansion of the shadow
-              ),
-            ],
+        SizedBox(height: scaleFontSize(20)),
+        Text(
+          trans('plz_enter_phone'),
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: scaleFontSize(14),
           ),
+        ),
+        SizedBox(height: scaleFontSize(20)),
+        BoxWidget(
+          padding: 20,
+          margin: appSpace,
           child: Column(
             children: [
-              // TextFormField(
-              //   keyboardType: TextInputType.phone,
-              //   decoration: InputDecoration(
-              //     border: OutlineInputBorder(),
-              //     contentPadding: EdgeInsets.all(
-              //       scaleFontSize(appSpace),
-              //     ),
-              //   ),
-              // ),
-
               IntlPhoneField(
                 showDropdownIcon: false,
                 disableAutoFillHints: false,
