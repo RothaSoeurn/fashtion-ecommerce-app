@@ -19,7 +19,9 @@ class _ItemFilterScreenState extends State<ItemFilterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppbarWidget(),
+      appBar: const AppbarWidget(
+        isBack: true,
+      ),
       body: ListView(
         padding: EdgeInsets.all(scaleFontSize(appSpace)),
         children: [

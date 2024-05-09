@@ -189,7 +189,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               ListTile(
                 onTap: () {
-                  //TODO
+                  dialogHelper(
+                    context,
+                    title: trans('logout'),
+                    content: trans('you_want_logout'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  );
                 },
                 title: Text(
                   trans('logout'),

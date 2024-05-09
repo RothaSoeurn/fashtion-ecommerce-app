@@ -63,6 +63,9 @@ class Locals {
       'delete_my_account': 'Delete my account',
       'khmer': 'Khmer',
       'english': 'English',
+      'you_want_logout': 'Do you want to logout account?',
+      'ok': 'Ok',
+      'cancel': 'Cancel',
     },
     'km': {
       'english': 'អង់គ្លេស',
