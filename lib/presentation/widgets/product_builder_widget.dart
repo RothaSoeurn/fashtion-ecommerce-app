@@ -1,6 +1,7 @@
 import 'package:fashion_ecom_app/constants/constant.dart';
 import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/constants/style.dart';
+import 'package:fashion_ecom_app/presentation/screens/item_detail/item_detail_screen.dart';
 import 'package:fashion_ecom_app/presentation/widgets/product_grid_widget.dart';
 import 'package:fashion_ecom_app/presentation/widgets/product_horinzol_widget.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,13 @@ class ProductBuilder extends StatelessWidget {
         crossAxisSpacing: scaleFontSize(appSpace),
         mainAxisSpacing: scaleFontSize(appSpace),
         itemBuilder: (context, index) {
-          return const ProductGridWidget();
+          return GestureDetector(
+            onTap: () => Navigator.pushNamed(
+              context,
+              ItemDetailScreen.routeName,
+            ),
+            child: const ProductGridWidget(),
+          );
         },
       );
     }

@@ -2,6 +2,7 @@ import 'package:fashion_ecom_app/presentation/screens/account_delete/account_del
 import 'package:fashion_ecom_app/presentation/screens/address_book/address_book_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/auth/change_password_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/edit_profile/edit_profile_screen.dart';
+import 'package:fashion_ecom_app/presentation/screens/item_detail/item_detail_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/item_filter/item_filter_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/language/language_screen.dart';
 import 'package:fashion_ecom_app/presentation/screens/main_screen.dart';
@@ -82,6 +83,16 @@ class AppNavigator {
         return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) {
             return const AccountDeleteScreen();
+          },
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return _st(animation, child);
+          },
+        );
+
+      case ItemDetailScreen.routeName:
+        return PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) {
+            return const ItemDetailScreen();
           },
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return _st(animation, child);

@@ -8,6 +8,7 @@ class ProductGridWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ImageNetWorkWidget(
           fit: BoxFit.cover,
@@ -19,7 +20,7 @@ class ProductGridWidget extends StatelessWidget {
         ),
         SizedBox(height: scaleFontSize(5)),
         Text(
-          '21WN reversible angora cardigan',
+          '21WN reversible',
           style: TextStyle(
             fontSize: scaleFontSize(16),
           ),
@@ -28,7 +29,7 @@ class ProductGridWidget extends StatelessWidget {
         Text(
           '\$120',
           style: TextStyle(
-              fontSize: scaleFontSize(24),
+              fontSize: scaleFontSize(16),
               color: Theme.of(context).primaryColor),
           textAlign: TextAlign.center,
         ),
