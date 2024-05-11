@@ -26,3 +26,5 @@ const albumsSvg = "$assetIcon/albums.svg";
 const addSvg = "$assetIcon/add.svg";
 const deleteSvg = "$assetIcon/delete.svg";
 const removeSvg = "$assetIcon/remove.svg";
+const favSvg = "$assetIcon/fav.svg";
+const favFullSvg = "$assetIcon/fav-full.svg";

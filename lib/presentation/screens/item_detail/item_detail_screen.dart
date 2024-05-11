@@ -36,6 +36,139 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   List<String> sizes = ['S', 'M', 'L', 'XL'];
   final _carouselController = CarouselController();
   int _currentIndex = 0;
+
+  showBottomSheetAddToCart() {
+    showModalBottomSheet(
+        showDragHandle: true,
+        context: context,
+        builder: (context) {
+          return Padding(
+            padding: EdgeInsets.all(scaleFontSize(appSpace)),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      trans('colors'),
+                      style: TextStyle(
+                        fontSize: scaleFontSize(16),
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(height: scaleFontSize(15)),
+                    SizedBox(
+                      height: scaleFontSize(35),
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: colors.length,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            padding: EdgeInsets.all(scaleFontSize(appSpace)),
+                            margin: EdgeInsets.symmetric(
+                              horizontal: scaleFontSize(5),
+                            ),
+                            width: scaleFontSize(30),
+                            height: scaleFontSize(30),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: colors[index],
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(height: scaleFontSize(20)),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      trans('sizes'),
+                      style: TextStyle(
+                        fontSize: scaleFontSize(16),
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(height: scaleFontSize(15)),
+                    SizedBox(
+                      height: scaleFontSize(35),
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: sizes.length,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            // padding: EdgeInsets.all(scaleFontSize(appSpace)),
+                            margin: EdgeInsets.symmetric(
+                              horizontal: scaleFontSize(5),
+                            ),
+                            width: scaleFontSize(30),
+                            height: scaleFontSize(30),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                width: 1,
+                                color: inputBackgroundColor,
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                // textAlign: TextAlign.center,
+                                sizes[index],
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: scaleFontSize(14),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(height: scaleFontSize(20)),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          addSvg,
+                          width: scaleFontSize(25),
+                          colorFilter: const ColorFilter.mode(
+                            appWhite,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                        SizedBox(width: scaleFontSize(appSpace)),
+                        Text(
+                          trans('add_to_cart'),
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: appWhite,
+                            fontSize: scaleFontSize(20),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,7 +338,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
           ),
           SizedBox(height: scaleFontSize(20)),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => showBottomSheetAddToCart(),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -219,7 +352,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                 ),
                 SizedBox(width: scaleFontSize(appSpace)),
                 Text(
-                  'Add to basket',
+                  trans('add_to_cart'),
                   style: TextStyle(
                     fontSize: scaleFontSize(20),
                     fontWeight: FontWeight.w600,

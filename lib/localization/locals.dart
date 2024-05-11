@@ -68,6 +68,7 @@ class Locals {
       'cancel': 'Cancel',
       'sizes': 'Sizes',
       'colors': 'Colors',
+      'add_to_cart': 'Add to basket',
     },
     'km': {
       'english': 'អង់គ្លេស',

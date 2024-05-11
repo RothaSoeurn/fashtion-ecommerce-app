@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const appWhite = Colors.white;
 const appBlack = Colors.black;
 const appGrey = Colors.grey;
+const appRed = Colors.red;
 
 //appcolor
 const primayColor = Color(0xffA8715A);
