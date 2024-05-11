@@ -9,6 +9,7 @@ import 'package:fashion_ecom_app/presentation/widgets/footer_widget.dart';
 import 'package:fashion_ecom_app/presentation/widgets/image_network_widget.dart';
 import 'package:fashion_ecom_app/presentation/widgets/product_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ItemDetailScreen extends StatefulWidget {
@@ -201,6 +202,32 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                 ),
               )
             ],
+          ),
+          SizedBox(height: scaleFontSize(20)),
+          ElevatedButton(
+            onPressed: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  addSvg,
+                  width: scaleFontSize(25),
+                  colorFilter: const ColorFilter.mode(
+                    appWhite,
+                    BlendMode.srcIn,
+                  ),
+                ),
+                SizedBox(width: scaleFontSize(appSpace)),
+                Text(
+                  'Add to basket',
+                  style: TextStyle(
+                    fontSize: scaleFontSize(20),
+                    fontWeight: FontWeight.w600,
+                    color: appWhite,
+                  ),
+                ),
+              ],
+            ),
           ),
           SizedBox(height: scaleFontSize(20)),
           Column(

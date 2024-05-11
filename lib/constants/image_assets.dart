@@ -23,3 +23,6 @@ const arrowBackSvg = "$assetIcon/arrow-back.svg";
 const editSvg = "$assetIcon/edit.svg";
 const cameraSvg = "$assetIcon/camera.svg";
 const albumsSvg = "$assetIcon/albums.svg";
+const addSvg = "$assetIcon/add.svg";
+const deleteSvg = "$assetIcon/delete.svg";
+const removeSvg = "$assetIcon/remove.svg";
