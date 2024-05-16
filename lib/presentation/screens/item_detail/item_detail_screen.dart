@@ -5,8 +5,10 @@ import 'package:fashion_ecom_app/constants/size_config.dart';
 import 'package:fashion_ecom_app/constants/style.dart';
 import 'package:fashion_ecom_app/helper/helper.dart';
 import 'package:fashion_ecom_app/presentation/widgets/appbar_widget.dart';
+import 'package:fashion_ecom_app/presentation/widgets/favorite_btn_widget.dart';
 import 'package:fashion_ecom_app/presentation/widgets/footer_widget.dart';
 import 'package:fashion_ecom_app/presentation/widgets/image_network_widget.dart';
+import 'package:fashion_ecom_app/presentation/widgets/photo_preview_widget.dart';
 import 'package:fashion_ecom_app/presentation/widgets/product_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -36,6 +38,18 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   List<String> sizes = ['S', 'M', 'L', 'XL'];
   final _carouselController = CarouselController();
   int _currentIndex = 0;
+
+  void _showPhotoPreview(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => PhotoViewWidget(
+          images: listImgs,
+          initialIndex: index,
+        ),
+      ),
+    );
+  }
 
   showBottomSheetAddToCart() {
     showModalBottomSheet(
@@ -178,33 +192,72 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
       body: ListView(
         padding: EdgeInsets.all(scaleFontSize(appSpace)),
         children: [
-          CarouselSlider.builder(
-            carouselController: _carouselController,
-            itemCount: listImgs.length,
-            itemBuilder: (context, index, realIndex) {
-              return ImageNetWorkWidget(
-                imageUrl: listImgs[index],
-                width: double.infinity,
-                height: scaleFontSize(500),
-                isNotRounding: true,
-              );
-            },
-            options: CarouselOptions(
-              autoPlay: true,
-              viewportFraction: 1,
-              aspectRatio: 2.0,
-              enlargeCenterPage: true,
-              enlargeStrategy: CenterPageEnlargeStrategy.height,
-              height: scaleFontSize(500),
-              autoPlayAnimationDuration: const Duration(seconds: 1),
-              autoPlayInterval: const Duration(seconds: 10),
-              enlargeFactor: 0,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-            ),
+          Stack(
+            children: [
+              CarouselSlider.builder(
+                carouselController: _carouselController,
+                itemCount: listImgs.length,
+                itemBuilder: (context, index, realIndex) {
+                  return ImageNetWorkWidget(
+                    imageUrl: listImgs[index],
+                    width: double.infinity,
+                    height: scaleFontSize(500),
+                    isNotRounding: true,
+                  );
+                },
+                options: CarouselOptions(
+                  autoPlay: true,
+                  viewportFraction: 1,
+                  aspectRatio: 2.0,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  height: scaleFontSize(500),
+                  autoPlayAnimationDuration: const Duration(seconds: 1),
+                  autoPlayInterval: const Duration(seconds: 10),
+                  enlargeFactor: 0,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _currentIndex = index;
+                    });
+                  },
+                ),
+              ),
+              Positioned(
+                top: scaleFontSize(8),
+                right: scaleFontSize(8),
+                child: FavoriteBtnWidget(
+                  width: 35,
+                  height: 35,
+                  onTap: () {
+                    //TODO
+                  },
+                ),
+              ),
+              Positioned(
+                bottom: scaleFontSize(8),
+                right: scaleFontSize(8),
+                child: Container(
+                  width: scaleFontSize(40),
+                  height: scaleFontSize(40),
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: appWhite,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromRGBO(100, 100, 111, 0.2),
+                        offset: Offset(0, 7),
+                        blurRadius: 29,
+                        spreadRadius: 0,
+                      ),
+                    ],
+                  ),
+                  child: IconButton(
+                    onPressed: () => _showPhotoPreview(_currentIndex),
+                    icon: SvgPicture.asset(zoomSvg),
+                  ),
+                ),
+              )
+            ],
           ),
           SizedBox(height: scaleFontSize(15)),
           Center(

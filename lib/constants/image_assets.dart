@@ -7,6 +7,7 @@ const forgetPassImg = "$assetImage/forget-password.png";
 const khmerImg = "$assetImage/khmer.png";
 const usaImg = "$assetImage/usa.png";
 //icons
+const zoomSvg = "$assetIcon/zoom.svg";
 const homeSvg = "$assetIcon/home-filled-svgrepo-com.svg";
 const menuSvg = "$assetIcon/menu-svgrepo-com.svg";
 const profileSvg = "$assetIcon/user-svgrepo-com.svg";
