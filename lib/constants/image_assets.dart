@@ -6,6 +6,8 @@ const deviderImg = "$assetImage/Devider.png";
 const forgetPassImg = "$assetImage/forget-password.png";
 const khmerImg = "$assetImage/khmer.png";
 const usaImg = "$assetImage/usa.png";
+const abaImg = "$assetImage/aba.png";
+const khqrImg = "$assetImage/khqr.png";
 //icons
 const zoomSvg = "$assetIcon/zoom.svg";
 const homeSvg = "$assetIcon/home-filled-svgrepo-com.svg";

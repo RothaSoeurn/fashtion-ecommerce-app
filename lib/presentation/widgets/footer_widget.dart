@@ -58,6 +58,32 @@ class FooterWidget extends StatelessWidget {
         SizedBox(height: scaleFontSize(15)),
         Image.asset(deviderImg),
         SizedBox(height: scaleFontSize(16)),
+        Text(
+          trans('we_accept').toUpperCase(),
+          style: TextStyle(
+            fontSize: scaleFontSize(20),
+            letterSpacing: scaleFontSize(7),
+          ),
+        ),
+        SizedBox(height: scaleFontSize(16)),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              abaImg,
+              width: scaleFontSize(40),
+              height: scaleFontSize(40),
+            ),
+            SizedBox(width: scaleFontSize(5)),
+            Image.asset(
+              khqrImg,
+              width: scaleFontSize(60),
+              height: scaleFontSize(63),
+            ),
+          ],
+        ),
+        SizedBox(height: scaleFontSize(16)),
       ],
     );
   }
