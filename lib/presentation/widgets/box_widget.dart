@@ -6,18 +6,18 @@ class BoxWidget extends StatelessWidget {
   const BoxWidget({
     super.key,
     this.padding = 16,
-    this.margin = 0,
+    this.margin,
     required this.child,
   });
   final double padding;
-  final double margin;
+  final EdgeInsets? margin;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(padding),
-      margin: EdgeInsets.all(margin),
+      margin: margin,
       decoration: const BoxDecoration(
         borderRadius: appRadius,
         color: appWhite,

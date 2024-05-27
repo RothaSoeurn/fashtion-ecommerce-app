@@ -58,7 +58,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         SizedBox(height: scaleFontSize(20)),
         BoxWidget(
           padding: 20,
-          margin: appSpace,
+          // margin: appSpace,
           child: Column(
             children: [
               IntlPhoneField(
